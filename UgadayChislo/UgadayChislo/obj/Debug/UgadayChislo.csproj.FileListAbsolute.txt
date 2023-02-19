@@ -1,0 +1,12 @@
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\bin\Debug\UgadayChislo.exe.config
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\bin\Debug\UgadayChislo.exe
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\bin\Debug\UgadayChislo.pdb
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.csproj.AssemblyReference.cache
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.Form1.resources
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.Properties.Resources.resources
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.csproj.GenerateResource.cache
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.csproj.CoreCompileInputs.cache
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.exe
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.pdb
+C:\Users\Professional\source\repos\UgadayChislo\UgadayChislo\obj\Debug\UgadayChislo.WelcomeForm.resources
