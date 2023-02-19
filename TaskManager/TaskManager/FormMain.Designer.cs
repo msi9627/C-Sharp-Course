@@ -48,6 +48,8 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbDisplayTasks = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,7 +61,7 @@
             this.groupBox1.Controls.Add(this.listView_TODO);
             this.groupBox1.Controls.Add(this.btAddTask);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(9, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(341, 414);
             this.groupBox1.TabIndex = 0;
@@ -120,7 +122,7 @@
             this.groupBox2.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox2.Controls.Add(this.listView_PR);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(368, 12);
+            this.groupBox2.Location = new System.Drawing.Point(365, 57);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(327, 414);
             this.groupBox2.TabIndex = 1;
@@ -173,7 +175,7 @@
             this.groupBox3.Controls.Add(this.listView_DONE);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox3.Location = new System.Drawing.Point(711, 12);
+            this.groupBox3.Location = new System.Drawing.Point(708, 57);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(346, 414);
             this.groupBox3.TabIndex = 1;
@@ -231,11 +233,35 @@
             // 
             this.columnHeader8.Text = "Статус";
             // 
+            // cbDisplayTasks
+            // 
+            this.cbDisplayTasks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDisplayTasks.FormattingEnabled = true;
+            this.cbDisplayTasks.Items.AddRange(new object[] {
+            "Мои Задачи",
+            "Все Задачи"});
+            this.cbDisplayTasks.Location = new System.Drawing.Point(804, 23);
+            this.cbDisplayTasks.Name = "cbDisplayTasks";
+            this.cbDisplayTasks.Size = new System.Drawing.Size(250, 28);
+            this.cbDisplayTasks.TabIndex = 2;
+            this.cbDisplayTasks.SelectedIndexChanged += new System.EventHandler(this.cbDisplayTasks_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(704, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Показать";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 432);
+            this.ClientSize = new System.Drawing.Size(1066, 483);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbDisplayTasks);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -246,6 +272,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -271,6 +298,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Button btRemoveTask;
+        private System.Windows.Forms.ComboBox cbDisplayTasks;
+        private System.Windows.Forms.Label label1;
     }
 }
 

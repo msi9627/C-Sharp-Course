@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ListView = System.Windows.Forms.ListView;
 
@@ -18,13 +20,21 @@ namespace TaskManager
             addTaskForm.Show();
         }
 
-        public void RefreshListViewData()
+        public void RefreshListViewData(User byUser = null)
         {
             listView_TODO.Items.Clear();
             listView_PR.Items.Clear();
             listView_DONE.Items.Clear();
 
             List<string[]> tasks = FileManager.ReadFile(TaskManager.tasksFilePath);
+            if (byUser != null)
+            {
+                List<string[]> userTasks = new List<string[]>();
+                foreach (string[] task in tasks)
+                    if (task[2] == byUser.Name)
+                        userTasks.Add(task);
+                tasks = userTasks;
+            }
             foreach (string[] task in tasks)
             {
                 ListViewItem listViewItem = new ListViewItem(task);
@@ -46,7 +56,8 @@ namespace TaskManager
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            RefreshListViewData();
+            cbDisplayTasks.SelectedIndex = 0;
+            RefreshListViewData(byUser: UserManager.currentUser);
         }
 
         private void itemDrag(ListView lv, object sender, ItemDragEventArgs e)
@@ -178,5 +189,16 @@ namespace TaskManager
             dragDrop(listView_TODO, sender, e);
         }
 
+        private void cbDisplayTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDisplayTasks.SelectedIndex == 0)
+                RefreshListViewData(byUser: UserManager.currentUser);
+            else RefreshListViewData();
+        }
+
+        public int cbDisplayTasksText
+        {
+            get { return cbDisplayTasks.SelectedIndex; }
+        }
     }
 }

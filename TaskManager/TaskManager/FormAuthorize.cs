@@ -19,6 +19,7 @@ namespace TaskManager
                 foreach (string[] user in users)
                     if (tbPass.Text == user[1])
                     {
+                        UserManager.currentUser = new User(tbLogin.Text, tbPass.Text);
                         FormMain formMain = new FormMain();
                         formMain.Show();
                         return;

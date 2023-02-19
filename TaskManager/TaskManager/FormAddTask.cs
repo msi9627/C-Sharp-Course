@@ -24,9 +24,12 @@ namespace TaskManager
                     TaskManager.addNewTask(new Task(description, taskDate, statusName));
                 else TaskManager.addNewTask(new Task(description, taskDate, userName.ToString(), statusName));
 
-                if (System.Windows.Forms.Application.OpenForms["FormMain"] != null)
+                var formMain = System.Windows.Forms.Application.OpenForms["FormMain"];
+                if (formMain != null)
                 {
-                    (System.Windows.Forms.Application.OpenForms["FormMain"] as FormMain).RefreshListViewData();
+                    if ((formMain as FormMain).cbDisplayTasksText == 0)
+                        (formMain as FormMain).RefreshListViewData(UserManager.currentUser);
+                    else (formMain as FormMain).RefreshListViewData();
                 }
                 MessageBox.Show("Задача добавлена", "Успешно", MessageBoxButtons.OK);
             }
