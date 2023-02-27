@@ -17,7 +17,7 @@ namespace TaskManager
             {
                 List<string[]> users = FileManager.ReadFile(UserManager.usersFilePath);
                 foreach (string[] user in users)
-                    if (tbPass.Text == user[1])
+                    if (tbLogin.Text == user[0] && tbPass.Text == user[1])
                     {
                         UserManager.currentUser = new User(tbLogin.Text, tbPass.Text);
                         FormMain formMain = new FormMain();
@@ -25,6 +25,10 @@ namespace TaskManager
                         return;
                     }
                 MessageBox.Show("Нет такого пользователя. Пожалуйста, зарегистрируйтесь.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите логин и пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -38,6 +42,10 @@ namespace TaskManager
                     UserManager.addNewUser(new User(tbLogin.Text, tbPass.Text));
                     MessageBox.Show("Вы успешно зарегистрировались в системе. Пожалуйста, войдите в систему.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите логин и пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
